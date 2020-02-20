@@ -1,0 +1,11 @@
+<h1>My cocktails</h1>
+<%= link_to 'Add Cocktail', new_cocktail_path, class: "btn btn-outline-success" %>
+<br><br>
+<ul>
+  <% @cocktails.each do |cocktail| %>
+    <li><%= cocktail.name %></li>
+    <%= link_to 'Show More', cocktail_path(cocktail), class: "btn btn-outline-primary" %>
+    <%= link_to 'Edit', edit_cocktail_path(cocktail), class: "btn btn-outline-warning" %>
+    <%= link_to 'Delete', cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+  <% end %>
+</ul>
