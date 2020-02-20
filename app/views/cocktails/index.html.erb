@@ -1,11 +1,23 @@
-<h1>My cocktails</h1>
-<%= link_to 'Add Cocktail', new_cocktail_path, class: "btn btn-outline-success" %>
-<br><br>
-<ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://gastronomicainternacional.com/wp-content/uploads/2018/02/receta-mojito-con-mezcal-1.jpg);">
+  <div class="container">
+    <h1>My cocktails</h1>
+    <%= link_to 'Add Cocktail', new_cocktail_path, class: "btn btn-outline-success" %>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 justify-content-center">
   <% @cocktails.each do |cocktail| %>
-    <li><%= cocktail.name %></li>
-    <%= link_to 'Show More', cocktail_path(cocktail), class: "btn btn-outline-primary" %>
-    <%= link_to 'Edit', edit_cocktail_path(cocktail), class: "btn btn-outline-warning" %>
-    <%= link_to 'Delete', cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+    <div class="col m-4 card-category custom-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div>
+        <div class="card-body">
+          <h5 class="card-title text-light text-center"><%= cocktail.name %></h5>
+          <p class="card-text text-center">
+          <%= link_to 'Show More', cocktail_path(cocktail), class: "btn btn-outline-primary" %>
+          <%= link_to 'Edit', edit_cocktail_path(cocktail), class: "btn btn-outline-warning" %>
+          <%= link_to 'Delete', cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+          </p>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
