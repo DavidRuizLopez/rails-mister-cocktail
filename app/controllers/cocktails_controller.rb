@@ -1,7 +1,7 @@
 class CocktailsController < ApplicationController
   def index
     if params[:search] && params[:search][:query] != ''
-      @cocktails = Cocktail.all.select { |cocktail| cocktail.name.downcase.include(params[:search][:query].downcase) }
+      @cocktails = Cocktail.all.select { |cocktail| cocktail.name.downcase.include?(params[:search][:query].downcase) }
     else
       @cocktails = Cocktail.all
     end
@@ -40,7 +40,7 @@ class CocktailsController < ApplicationController
   def destroy
     find
     @cocktail.destroy
-    redirect_to cocktails_path
+    redirect_to root_path
   end
 
   private
