@@ -1,6 +1,10 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    if params[:search] && params[:search][:query] != ''
+      @cocktails = Cocktail.all.select { |cocktail| cocktail.name.downcase == params[:search][:query].downcase }
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show

@@ -5,6 +5,15 @@
   </div>
 </div>
 
+<%= simple_form_for :search, url: cocktails_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+<% end %>
+
 <div class="row row-cols-1 row-cols-md-3 justify-content-center">
   <% @cocktails.each do |cocktail| %>
     <div class="col m-4 card-category custom-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
@@ -12,9 +21,9 @@
         <div class="card-body">
           <h5 class="card-title text-light text-center"><%= cocktail.name %></h5>
           <p class="card-text text-center">
-          <%= link_to 'Show More', cocktail_path(cocktail), class: "btn btn-outline-primary" %>
-          <%= link_to 'Edit', edit_cocktail_path(cocktail), class: "btn btn-outline-warning" %>
-          <%= link_to 'Delete', cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+          <%= link_to 'Show More', cocktail_path(cocktail), class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_cocktail_path(cocktail), class: "btn btn-warning" %>
+          <%= link_to 'Delete', cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
           </p>
         </div>
       </div>

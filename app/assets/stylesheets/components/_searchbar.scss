@@ -1,0 +1,24 @@
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+}
+
+.search-form-control .form-control {
+  background-color: #a9eef5;
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #1960b9;
+}
+
+.search-form-control .form-control:focus {
+  background-color: #d5fbff;
+  border: 1px solid #a9eef5;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
