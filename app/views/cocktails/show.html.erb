@@ -1,7 +1,8 @@
 
   <div class="row no-gutters">
     <div class="col-md-4">
-      <img src="https://gastronomicainternacional.com/wp-content/uploads/2018/02/receta-mojito-con-mezcal-1.jpg" class="card-img custom-page-img" alt="...">
+      <%= cl_image_tag @article.photo.key, class: "card-img custom-page-img" %>
+      <!-- <img src="https://gastronomicainternacional.com/wp-content/uploads/2018/02/receta-mojito-con-mezcal-1.jpg" class="card-img custom-page-img" alt="..."> -->
     </div>
     <div class="col-md-8">
         <div class="title-bar border-bottom">
