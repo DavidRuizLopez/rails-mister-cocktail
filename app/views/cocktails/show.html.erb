@@ -1,7 +1,7 @@
 
   <div class="row no-gutters">
     <div class="col-md-4">
-      <% if @cocktail.photo.attached? %><%= cl_image_tag @cocktail.photo.key, , secure: true, class: "card-img custom-page-img" %><% else %><img src='https://www.laylita.com/recetas/wp-content/uploads/2014/06/Caipirinhas-o-caipriC3B1as-500x500.jpg' class='card-img custom-page-img'><% end %>
+      <% if @cocktail.photo.attached? %><%= cl_image_tag @cocktail.photo.key, secure: true, class: "card-img custom-page-img" %><% else %><img src='https://www.laylita.com/recetas/wp-content/uploads/2014/06/Caipirinhas-o-caipriC3B1as-500x500.jpg' class='card-img custom-page-img'><% end %>
       <!-- <img src="https://gastronomicainternacional.com/wp-content/uploads/2018/02/receta-mojito-con-mezcal-1.jpg" class="card-img custom-page-img" alt="..."> -->
     </div>
     <div class="col-md-8">
